@@ -1,0 +1,15 @@
+<div class="form">
+<h1>Enter The Order</h1>
+
+
+
+  <%= form_for :order, :url => orders_path, :html => {:method => :post} do |f|%>
+
+  <%= f.label :item %><br>
+  <%= f.text_field :item %><br>
+
+  <%= f.submit "Enter" %><br>
+
+  <% end %>
+
+</div>
