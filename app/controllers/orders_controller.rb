@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
 
 
   def new
-    binding.pry
     @order = Order.new
   end
 
