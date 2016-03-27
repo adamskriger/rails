@@ -25,6 +25,11 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+
+  def index
+    @user
+  end
+
   private
 
   def user_params

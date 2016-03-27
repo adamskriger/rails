@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
-      redirect_to root_path
+      redirect_to request.referer
     else
       redirect_to root_path
     end
