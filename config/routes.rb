@@ -8,7 +8,15 @@ Rails.application.routes.draw do
   root 'users#new'
 
   resources :users
+  resources :orders
 
+  post 'orders' => 'orders#show'
+
+
+
+  get 'sessions/new' => 'sessions#new'
+  post 'sessions' => 'sessions#create'
+  delete 'sessions' => 'sessions#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
