@@ -1,9 +1,12 @@
 class Order < ActiveRecord::Base
-  has_and_belongs_to_many :users
+
+  belongs_to :user
 
   validates :item, presence: true
 
-  def add_order(order)
+  def add_order(username)
+    user = User.where(username: username).first
+      user.orders.create(item: order.item)
   end
 
   def remove_order(order)

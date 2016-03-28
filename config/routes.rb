@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   root 'users#new'
 
   resources :users
-  resources :orders
+    resources :orders
+  
 
   post 'orders' => 'orders#show'
 

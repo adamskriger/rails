@@ -1,12 +1,14 @@
 class OrdersController < ApplicationController
 
-
+  def index
+    Order.all
+  end
   def new
     @order = Order.new
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = current_user.orders.new(order_params)
     if @order.save
       redirect_to request.referer
     else
